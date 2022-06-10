@@ -34,6 +34,8 @@ public class CadastroDespesaController {
         Despesa depesaEntity = despesaService.salvar(despesa);
         log.info("Objeto de despesa após persistir {}" + depesaEntity);
 
+        model.addObject("mensagem", "despesa salva");
+
         return model;
     }
 }
