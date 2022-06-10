@@ -13,13 +13,12 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "TB_USUARIOS")
-
 public class Usuarios {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long primarykey;
-  private String nome;
-  private String email;
-  private long usurId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long primarykey;
+    private String nome;
+    private String email;
+    private long userId;
 }

@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Slf4j
 public class Cadastro {
 
-  @RequestMapping(value = "/cadastro",
-                  method = RequestMethod.GET)
+  @RequestMapping(value = "/cadastro", method = RequestMethod.GET)
   public String getCadastro(){
     return "/cadastro/cadastro-usuario";
   }
+  
 }

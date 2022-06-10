@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UsuarioService {
 
-  private final UsuarioRepository usuarioRepository;
+    private final UsuarioRepository usuarioRepository;
 
-  public Usuarios salvar (Usuarios usuarios){
-    return usuarioRepository.save(usuarios);
-  }
+    public Usuarios salvar(Usuarios usuarios) {
+        return usuarioRepository.save(usuarios);
+    }
 }
