@@ -1,6 +1,7 @@
 <%@page pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,7 +14,7 @@
 
 <form class="form-horizontal" action="/cadastrodespesa" method="post">
     <c:if test="${!empty mensagem}">
-        <div class="alert alert-sucess">
+        <div class="alert alert-success">
             <span>${mensagem}</span>
         </div>
     </c:if>
@@ -35,15 +36,9 @@
         <label class="col-sm-2 control-label">Categoria</label>
         <div class="col-sm-2">
             <select class="form-control" name="categoria">
-                <option>Alimentação</option>
-                <option>Transporte</option>
-                <option>Vestuário</option>
-                <option>Cuidados Pessoais</option>
-                <option>Moradia</option>
-                <option>Lazer</option>
-                <option>Educação</option>
-                <option>Compras</option>
-                <option>Diversão</option>
+                <c:forEach items="${todasCategorias}" var="categoria">
+                    <option value="${categoria}">${categoria}</option>
+                </c:forEach>
             </select>
         </div>
     </div>

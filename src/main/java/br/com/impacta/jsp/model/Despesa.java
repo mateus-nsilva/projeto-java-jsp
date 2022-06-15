@@ -25,7 +25,7 @@ public class Despesa {
     private String descricao;
 
     @Enumerated(EnumType.STRING)
-    private Categoria categoria;
+    private CategoriaEnum categoria;
 
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
