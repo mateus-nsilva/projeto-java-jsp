@@ -16,12 +16,7 @@ public class JspApplication {
   }
 
   @Bean
-  public LocaleResolver localeResolver() {
-    return new FixedLocaleResolver(new Locale("pt", "BR"));
+  public LocaleResolver localeResolver (){
+    return new FixedLocaleResolver(new Locale("pt","BR"));
   }
 }
-
-
-
-
-

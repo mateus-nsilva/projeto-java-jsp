@@ -1,6 +1,6 @@
-package br.com.impacta.jsp.controller.cadastro;
+package br.com.impacta.jsp.controller.despesa;
 
-import br.com.impacta.jsp.model.CategoriaEnum;
+import br.com.impacta.jsp.model.Categorias;
 import br.com.impacta.jsp.model.Despesa;
 import br.com.impacta.jsp.service.CategoriaService;
 import br.com.impacta.jsp.service.DespesaService;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -30,26 +29,24 @@ public class CadastroDespesaController {
 
     @GetMapping
     public ModelAndView getCadastroDespesa() {
-        return new ModelAndView("/cadastro/cadastro-de-despesa");
+        return new ModelAndView("/despesa/cadastro-de-despesa");
     }
 
     @PostMapping
     public ModelAndView salvar(@Valid Despesa despesa) {
-        //Gravar no banco de dados
         log.info("Objeto de despesa antes de persistir {}" + despesa);
         Despesa depesaEntity = despesaService.salvar(despesa);
         log.info("Objeto de despesa após persistir {}" + depesaEntity);
 
-        ModelAndView model = new ModelAndView("/cadastro/cadastro-de-despesa");
+        ModelAndView model = new ModelAndView("/despesa/cadastro-de-despesa");
         model.addObject("mensagem", "Despesa salva com sucesso!");
 
         return model;
     }
 
-    @ModelAttribute("todasCategorias")
-    public List<String> todasCategorias() {
-//        return Arrays.asList(CategoriaEnum.values());
-        return categoriaService.getList();
+    @ModelAttribute("todasCategoria")
+    public List<Categorias> todasCategoria(){
+        return categoriaService.getListAll();
     }
 
 }

@@ -1,4 +1,4 @@
-package br.com.impacta.jsp.controller.cadastro;
+package br.com.impacta.jsp.controller.despesa;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @Slf4j
-public class Cadastro {
+public class CadastroUsuarioController {
 
   @RequestMapping(value = "/cadastro", method = RequestMethod.GET)
   public String getCadastro(){
-    return "/cadastro/cadastro-usuario";
+    return "/despesa/cadastro-usuario";
   }
   
 }

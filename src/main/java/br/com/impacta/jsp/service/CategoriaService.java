@@ -1,5 +1,6 @@
 package br.com.impacta.jsp.service;
 
+import br.com.impacta.jsp.model.Categorias;
 import br.com.impacta.jsp.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,9 @@ public class CategoriaService {
                 ));
 
         return novaList;
+    }
+
+    public List<Categorias> getListAll(){
+        return categoriaRepository.findAll();
     }
 }

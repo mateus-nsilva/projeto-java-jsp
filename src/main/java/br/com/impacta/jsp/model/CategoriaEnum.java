@@ -18,6 +18,7 @@ public enum CategoriaEnum {
     DIVERSAO("Diversão"),
     SAUDE("Saúde");
 
+
     private final String nome;
 
 }

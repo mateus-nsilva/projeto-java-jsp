@@ -5,6 +5,9 @@ import br.com.impacta.jsp.repository.DespesaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class DespesaService {
 
@@ -14,4 +17,21 @@ public class DespesaService {
     public Despesa salvar(Despesa despesa) {
         return despesaRepository.save(despesa);
     }
+
+    public List<Despesa> getLista() {
+        return despesaRepository.findAll();
+    }
+
+//    public List<String> findAll() {
+//        List<String> novaList = new ArrayList<>();
+//
+//        despesaRepository
+//                .findAll()
+//                .stream()
+//                .forEach(categorias ->
+//                        novaList.add(categorias)
+//                        ));
+//
+//        return novaList;
+//    }
 }
