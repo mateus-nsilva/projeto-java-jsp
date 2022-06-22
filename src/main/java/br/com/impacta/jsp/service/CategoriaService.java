@@ -21,8 +21,8 @@ public class CategoriaService {
                 .findAll()
                 .stream()
                 .forEach(categorias ->
-                        novaList.add(categorias.getNome()
-                ));
+                        novaList.add(categorias.getNome())
+                );
 
         return novaList;
     }

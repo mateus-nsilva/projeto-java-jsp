@@ -1,5 +1,6 @@
 <%@page language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="f"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Cadastro de Despesa</title>
@@ -31,10 +32,13 @@
         <label for="categoria" class="col-sm-2 control-label">Categoria</label>
         <div class="col-sm-2">
             <select class="form-control" name="categoria">
-                <option hidden>Selecione...</option>
+                <%-- <option type="hidden">Selecione...</option> --%>
+                <option value="" disabled selected>Selecione...</option>
                 <%-- opção não selecionavel--%>
                 <c:forEach items="${todasCategoria}" var="categoria">
-                    <option value="${categoria.codigo}">${categoria.nome}</option>
+                    <c:set var="qualquercoisa" value="${f:toUpperCase(categoria.nome)}"/>
+
+                    <option value="${categoria.codigo}">${qualquercoisa}</option>
                 </c:forEach>
             </select>
         </div>
